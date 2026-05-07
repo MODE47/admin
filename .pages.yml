@@ -1,28 +1,29 @@
 media:
   input: portfolio
   output: /portfolio
-  categories: ["image"]
 
-content:
+collections:
   - name: projects
     label: Projects
-    type: data
+    label_singular: Project
+    folder: .
+    create: true
     file: projects.json
     fields:
       - name: projects
         label: Projects List
-        type: list
+        widget: list
         fields:
-          - { name: title, label: Title, type: string, required: true }
-          - { name: description, label: Description, type: text, required: true }
+          - { name: title, label: Title, widget: string }
+          - { name: description, label: Description, widget: text }
           - name: category
             label: Category
-            type: select
+            widget: select
             options:
-              - { value: solar, label: Sustainable Energy Solutions }
-              - { value: safety, label: Safety and PPE }
-              - { value: agriculture, label: Agriculture }
-              - { value: civil, label: Civil & Real Estate }
-              - { value: energy, label: Renewable Energy & PUEs }
-          - { name: image, label: Main Image, type: image, required: true }
-          - { name: fullImage, label: Full-size Image (optional), type: image, required: false }
+              - solar
+              - safety
+              - agriculture
+              - civil
+              - energy
+          - { name: image, label: Image, widget: image }
+          - { name: fullImage, label: Full Image (optional), widget: image, required: false }

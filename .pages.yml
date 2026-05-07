@@ -6,24 +6,22 @@ collections:
   - name: projects
     label: Projects
     label_singular: Project
-    folder: .
-    create: true
     file: projects.json
     fields:
       - name: projects
         label: Projects List
         widget: list
         fields:
-          - { name: title, label: Title, widget: string }
-          - { name: description, label: Description, widget: text }
-          - name: category
-            label: Category
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Category
+            name: category
             widget: select
             options:
-              - solar
-              - safety
-              - agriculture
-              - civil
-              - energy
-          - { name: image, label: Image, widget: image }
-          - { name: fullImage, label: Full Image (optional), widget: image, required: false }
+              - { label: Sustainable Energy Solutions, value: solar }
+              - { label: Safety and PPE, value: safety }
+              - { label: Agriculture, value: agriculture }
+              - { label: Civil & Real Estate, value: civil }
+              - { label: Renewable Energy & PUEs, value: energy }
+          - { label: Image, name: image, widget: image }
+          - { label: Full Image (optional), name: fullImage, widget: image, required: false }
